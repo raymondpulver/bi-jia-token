@@ -1,0 +1,25 @@
+{
+  "name": "bi-jia-token",
+  "version": "0.1.0",
+  "description": "Bi Jia Token",
+  "main": "index.js",
+  "repository": "https://github.com/raymondpulver/bi-jia-token",
+  "author": "Raymond Pulver IV",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "deploy:mainnet": "truffle migrate --network mainnet",
+    "deploy:ganache": "truffle migrate --network ganache",
+    "verify": "truffle run verify BiJiaToken --network mainnet"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.0.2",
+    "@truffle/hdwallet-provider": "^1.0.35",
+    "dotenv": "^8.2.0",
+    "ethereumjs-wallet": "^0.6.3",
+    "ethers": "^5.0.2",
+    "ganache-cli": "^6.9.1",
+    "truffle": "^5.1.31",
+    "truffle-plugin-verify": "^0.3.11"
+  }
+}
