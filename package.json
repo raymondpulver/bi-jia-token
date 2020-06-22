@@ -10,7 +10,7 @@
   "scripts": {
     "deploy:mainnet": "truffle migrate --network mainnet",
     "deploy:ganache": "truffle migrate --network ganache",
-    "verify": "truffle run verify BiJiaToken --network mainnet"
+    "verify": "truffle run verify build/BiJiaToken.json --network mainnet"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.0.2",
@@ -20,6 +20,7 @@
     "ethers": "^5.0.2",
     "ganache-cli": "^6.9.1",
     "truffle": "^5.1.31",
-    "truffle-plugin-verify": "^0.3.11"
+    "truffle-plugin-verify": "^0.3.11",
+    "verify-on-etherscan": "^1.2.1"
   }
 }

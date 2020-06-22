@@ -22,12 +22,13 @@ module.exports = {
   },
   networks: {
     mainnet: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY.substr(2), new ethers.providers.InfuraProvider('mainnet').connection.url),
-      gasPrice: Number(ethers.utils.parseUnits('21.5', 9).toString()),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY.substr(2), new ethers.providers.InfuraProvider('mainnet', process.env.INFURA_PROJECT_ID).connection.url),
+      gasPrice: Number(ethers.utils.parseUnits('40', 9).toString()),
       gas: 3e6,
       skipDryRun: true,
       network_id: '1',
-      timeoutBlocks: 1e4
+      timeoutBlocks: 1e4,
+      timeoutExpiry: 1000*60e3
     },
     ganache: {
       host: 'localhost',
@@ -36,7 +37,7 @@ module.exports = {
     }
   },
   plugins: [
-    'truffle-plugin-verify'
+    'verify-on-etherscan'
   ],
   api_keys: {
     etherscan: process.env.ETHERSCAN_API_KEY
